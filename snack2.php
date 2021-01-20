@@ -10,6 +10,12 @@
     Se tutto è ok stampare “Accesso riuscito”, altrimenti
     “Accesso negato”.
     */
+
+    $name = $_GET['name'];
+    $mail = $_GET['mail'];
+    $age = intval($_GET['age']);
+
+
  ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -21,5 +27,14 @@
 </head>
 <body>
 
+    <h1 style="text-align: center;">
+        <?php
+            if ( strlen($name) > 3 && strpos($mail, '@') !== false && strpos($mail, '.') !== false && is_int($age) ) {
+                echo "ACCESSO CONSENTITO";
+            } else {
+                echo "ACCESSO NEGATO";
+            }
+         ?>
+    </h1>
 </body>
 </html>
